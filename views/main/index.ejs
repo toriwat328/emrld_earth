@@ -5,6 +5,9 @@
         <title>EMRLD EARTH</title>
     </head>
     <body>
-        <h1>WELCOME TO EMRLD EARTH</h1>
+    <%  if(username) {  %>
+            <h1>Hello, <%=username%>!</h1>
+    <%    }  %>
+
     </body>
 </html>

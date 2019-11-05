@@ -2,7 +2,10 @@
 //DEPENDENCIES
 //-----------------------------------
 const express = require('express')
+const User = require('./models/users.js')
+const bcrypt = require('bcrypt')
 const methodOverride = require('method-override')
+const session = require('express-session')
 const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
@@ -35,12 +38,55 @@ app.use(express.urlencoded({extended: false}))
 //be able to use delete and put routes
 app.use(methodOverride('_method'))
 
+//enable cookies
+app.use(session({
+    secret: 'sfdjalsdfsljf',
+    resave: false,
+    saveUninitialized: false
+}))
+
+//-----------------------------------
+//CONTROLLER MAPPING
+//-----------------------------------
+
+const mainController = require('./controllers/main.js')
+app.use('/main', mainController)
+
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
 //-----------------------------------
 //ROUTES
 //-----------------------------------
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.render('welcome.ejs')
+})
+
+app.post('/', (req, res) => {
+    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+    User.create(req.body, (error, createdUser) => {
+        req.session.username = createdUser.username
+        res.redirect('/main')
+    })
+})
+
+app.get('/set', (req, res) => {
+    req.session.username = 'tori'
+    res.send('I set a cookie')
+})
+
+app.get('/get', (req, res) => {
+    res.send(req.session. username);
+})
+
+app.get('/destroy', () => {
+    req.session.destroy((err) => {
+        if(err){
+            alert('Failure to Log Out')
+        } else {
+            res.redirect('/')
+        }
+    })
 })
 
 //-----------------------------------
