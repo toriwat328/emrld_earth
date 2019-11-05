@@ -29,7 +29,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //use public folder for static assets
 app.use(express.static('public'))
 
-//populate req.bdy with parsed info from forms
+//populate req.body with parsed info from forms
 app.use(express.urlencoded({extended: false}))
 
 //be able to use delete and put routes
