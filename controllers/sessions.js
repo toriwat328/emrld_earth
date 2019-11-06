@@ -11,12 +11,19 @@ router.post('/', (req, res) => {
     User.findOne({username: req.body.username}, (error, foundUser) => {
         if(foundUser === null){
             res.redirect('/sessions/new');
+            console.log('empty');
+
         } else {
             const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password)
             if(doesPasswordMatch){
                 req.session.username = foundUser.username;
+                res.redirect('/main');
+                console.log('found');
             } else {
                 res.redirect('/sessions/new')
+                console.log(req.body.password);
+                console.log(foundUser.password);
+                console.log('not found');
             }
         }
     })
