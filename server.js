@@ -33,7 +33,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'))
 
 //populate req.body with parsed info from forms
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
 
 //be able to use delete and put routes
 app.use(methodOverride('_method'))
@@ -73,6 +73,7 @@ app.post('/', (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (error, createdUser) => {
         req.session.username = createdUser.username
+        console.log(createdUser);
         res.redirect('/main')
     })
 })
@@ -83,7 +84,7 @@ app.get('/set', (req, res) => {
 })
 
 app.get('/get', (req, res) => {
-    res.send(req.session. username);
+    res.send(req.session.username);
 })
 
 app.get('/destroy', () => {

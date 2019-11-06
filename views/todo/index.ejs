@@ -6,13 +6,81 @@
     </head>
     <body>
         <h1>TODO INDEX</h1>
+        <a href="/todo/new">Create New Todo Item</a><br/>
+        <a href="/main">Back to Dashboard</a>
         <!-- if todo property is null, then have "Create a todo", else the todo properties will show -->
+        <h3>In Your Home</h3>
+    <%    for(let i = 0; i < allTodo.length; i++){ %>
+        <%    if(allTodo[i].category === "In Your Home"){  %>
+                <div class="todo-item">
+                    Action: <%=allTodo[i].action%><br/>
+                    Description: <%=allTodo[i].description%><br/>
+                    <form action="index.html" method="post">
+                    Completed:   <input type="checkbox" name="" value="">
+                    </form>
+                </div>
+
+        <%    } else {  %>
+
+        <%    }  %>
+
+    <%    }  %>
+
+        <h3>On Your Table</h3>
+    <%    for(let i = 0; i < allTodo.length; i++){ %>
+        <%    if(allTodo[i].category === "On Your Table"){  %>
+                <div class="todo-item">
+                    Action: <%=allTodo[i].action%><br/>
+                    Description: <%=allTodo[i].description%><br/>
+                    <form action="index.html" method="post">
+                    Completed:   <input type="checkbox" name="" value="">
+                    </form>
+                </div>
+
+        <%    } else {  %>
+
+        <%    }  %>
+
+    <%    }  %>
+
+    <h3>Along Your Commute</h3>
+<%    for(let i = 0; i < allTodo.length; i++){ %>
+    <%    if(allTodo[i].category === "Along Your Commute"){  %>
+            <div class="todo-item">
+                Action: <%=allTodo[i].action%><br/>
+                Description: <%=allTodo[i].description%><br/>
+                <form action="index.html" method="post">
+                Completed:   <input type="checkbox" name="" value="">
+                </form>
+            </div>
+
+    <%    } else {  %>
+
+    <%    }  %>
+
+<%    }  %>
 
 
 
+<h3>In Your Neighborhood</h3>
+<%    for(let i = 0; i < allTodo.length; i++){ %>
+<%    if(allTodo[i].category === "In Your Neighborhood"){  %>
+        <div class="todo-item">
+            Action: <%=allTodo[i].action%><br/>
+            Description: <%=allTodo[i].description%><br/>
+            <form action="index.html" method="post">
+            Completed:   <input type="checkbox" name="" value="">
+            </form>
+        </div>
+
+<%    } else {  %>
+
+<%    }  %>
+
+<%    }  %>
 
 
-        <a href="/todo/new">Create New Todo Item</a>
+
 
     </body>
 </html>

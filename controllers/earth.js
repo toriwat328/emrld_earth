@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const earthseed = require('../models/earthseed.js');
+const User = require('../models/users.js');
 
 
 router.get('/', (req, res) => {
@@ -9,5 +10,19 @@ router.get('/', (req, res) => {
                 allEarthSeed: earthseed
             });
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
