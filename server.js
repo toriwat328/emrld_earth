@@ -54,6 +54,13 @@ app.use('/main', mainController)
 
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
+
+const earthController = require('./controllers/earth.js')
+app.use('/earth', earthController)
+
+const todoController = require('./controllers/todo.js')
+app.use('/todo', todoController)
+
 //-----------------------------------
 //ROUTES
 //-----------------------------------
