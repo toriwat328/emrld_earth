@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
         foundUser.todo.push(req.body)
         foundUser.save();
         console.log(req.session.username);
-        console.log(foundUser);
+        // console.log(foundUser);
         res.redirect('/todo');
 
     })
@@ -64,9 +64,21 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     User.findOne({username: req.session.username}, (error, foundUser) => {
         res.render('todo/edit.ejs', {
-            todo: foundUser.todo.id(req.params.id),
+            todo: foundUser.todo.id(req.params.id)
         })
 
+    })
+
+})
+
+// PUT ROUTE (7)
+router.put('/:id/', (req, res) => {
+    User.findOne({username: req.session.username}, (error, foundUser) => {
+        foundUser.todo.id(req.params.id).category = req.body.category;
+        foundUser.todo.id(req.params.id).action = req.body.action;
+        foundUser.todo.id(req.params.id).description = req.body.description;
+        foundUser.save();
+        res.redirect('/todo/')
     })
 
 })

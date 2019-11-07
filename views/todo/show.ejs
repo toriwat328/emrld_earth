@@ -7,6 +7,7 @@
     </head>
     <body>
         <h1>SHOW TODO</h1>
+        <a href="/todo">Back to To-Do</a>
 
         <h5>Category:</h5> <p><%=todo.category%></p><br/>
         <h5>Action:</h5> <p><%=todo.action%></p><br/>
@@ -16,9 +17,9 @@
         <form class="btn deletebtn" action="/todo/<%=todo.id%>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE">
         </form>
-        <button><a href"/todo/<%=todo.id%>/edit">Edit</a></button><br/>
+        <button><a href="/todo/<%=todo.id%>/edit">Edit</a></button>
 
 
-        <a href="/todo">Back to To-Do</a>
+
     </body>
 </html>
