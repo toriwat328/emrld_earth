@@ -49,26 +49,14 @@ router.get('/:id', (req, res) => {
 
 // DELETE ROUTE (4)
 router.delete('/:id', (req, res) => {
-    console.log(req.params.id);
-    // User.findOne({username: req.session.username}, (error, foundUser) => {
-
+    User.findOne({username: req.session.username}, (error, foundUser) => {
+        foundUser.todo.id(req.params.id).remove();
+        foundUser.save();
         // console.log(req.session.username);
-        // console.log(foundUser.todo.id[req.params.id]);
-        // res.redirect('/todo');
+        // console.log(foundUser);
+        res.redirect('/todo');
 
-        // User.findByIdAndDelete(foundUser.todo, (error, foundTodo) => {
-        //         console.log(foundTodo);
-        //         res.redirect('/todo');
-        //     })
-    // })
-
-    //     // console.log(req.params.id);
-        // foundUser.todo.id(req.body.id).remove();
-        // foundUser.save()
-
-
-
-
+    })
 
 })
 
