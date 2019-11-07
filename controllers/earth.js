@@ -13,8 +13,14 @@ router.get('/', (req, res) => {
 
 
 
-
-
+router.put('/:id',  (req, res) => {
+    User.findOne({username: req.session.username}, (error, foundUser) => {
+        foundUser.todo.push(earthseed[req.params.id]);
+        foundUser.save();
+        console.log(foundUser);
+        res.redirect('/todo');
+    })
+})
 
 
 
