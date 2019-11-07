@@ -3,18 +3,24 @@
     <head>
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
         <h1>CREATE NEW TODO</h1>
+        <a href="/todo">Back to To-Do</a>
         <form action="/todo" method="POST">
-            <label for="category-select">Choose A Category:</label>
-                <select id="category" name="category">
-                    <option value="">--Please choose a category--</option>
+
+
+                <label>Choose A Category</label>
+                <select class="browser-default"id="category" name="category">
+                    <option value="" disabled selected>--Please choose a category--</option>
                     <option name="category" value="In Your Home">In Your Home</option>
                     <option name="category" value="On Your Table">On Your Table</option>
                     <option name="category" value="Along Your Commute">Along Your Commute</option>
                     <option name="category" value="In Your Neighborhood">In Your Neighborhood</option>
                 </select></br/>
+
+
             Action: <input type="text" name="action"/><br/>
             Description: <input type="textarea" name="description"/><br/>
             <input type="submit" value="CREATE TODO">

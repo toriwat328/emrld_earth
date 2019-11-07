@@ -37,24 +37,35 @@ router.post('/', (req, res) => {
 
 })
 
+//SHOW ROUTE (4)
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id, (error, foundUser) => {
-        console.log(req.params.id);
+    User.findOne({username: req.session.username}, (error, foundUser) => {
         res.render('todo/show.ejs', {
-            // todo: foundUser.todo,
-            // index: req.params.id
+            allTodo:foundUser.todo,
+            todo: foundUser.todo.id(req.params.id),
+            i: req.params.id
         })
+
     })
 })
 
-// DELETE ROUTE (4)
+// DELETE ROUTE (5)
 router.delete('/:id', (req, res) => {
     User.findOne({username: req.session.username}, (error, foundUser) => {
         foundUser.todo.id(req.params.id).remove();
         foundUser.save();
-        // console.log(req.session.username);
-        // console.log(foundUser);
         res.redirect('/todo');
+
+    })
+
+})
+
+// EDIT ROUTE (6)
+router.get('/:id/edit', (req, res) => {
+    User.findOne({username: req.session.username}, (error, foundUser) => {
+        res.render('todo/edit.ejs', {
+            todo: foundUser.todo.id(req.params.id),
+        })
 
     })
 

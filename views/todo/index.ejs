@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
         <h1>TODO INDEX</h1>
@@ -14,14 +15,12 @@
         <%    if(allTodo[i].category === "In Your Home"){  %>
                 <div class="todo-item">
                     <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
-                    Description: <%=allTodo[i].description%><br/>
-                    <form action="index.html" method="post">
-                    Completed:   <input type="checkbox" name="" value="">
+                    <form action="#" method="POST">
+                        <label>
+                            <input type="checkbox">
+                            <span>Completed</span>
+                        </label>
                     </form>
-                    <form class="btn deletebtn" action="/todo/<%=allTodo[i].id%>?_method=DELETE" method="POST">
-                        <input type="submit" value="DELETE">
-                    </form>
-                    <button><a href"/todo/<%=id%>/edit">Edit</a></button>
                 </div>
 
         <%    } else {  %>
@@ -35,14 +34,12 @@
         <%    if(allTodo[i].category === "On Your Table"){  %>
                 <div class="todo-item">
                     <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
-                    Description: <%=allTodo[i].description%><br/>
-                    <form action="index.html" method="post">
-                    Completed:   <input type="checkbox" name="" value="">
+                    <form action="#" method="POST">
+                        <label>
+                            <input type="checkbox">
+                            <span>Completed</span>
+                        </label>
                     </form>
-                    <form class="btn deletebtn" action="/todo/<%=allTodo[i].id%>?_method=DELETE" method="POST">
-                        <input type="submit" value="DELETE">
-                    </form>
-                    <button><a href"/todo/<%=id%>/edit">Edit</a></button>
                 </div>
 
         <%    } else {  %>
@@ -56,14 +53,12 @@
     <%    if(allTodo[i].category === "Along Your Commute"){  %>
             <div class="todo-item">
                 <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
-                Description: <%=allTodo[i].description%><br/>
-                <form action="index.html" method="post">
-                Completed:   <input type="checkbox" name="" value="">
+                <form action="#" method="POST">
+                    <label>
+                        <input type="checkbox">
+                        <span>Completed</span>
+                    </label>
                 </form>
-                <form class="btn deletebtn" action="/todo/<%=allTodo[i].id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE">
-                </form>
-                <button><a href"/todo/<%=id%>/edit">Edit</a></button>
             </div>
 
     <%    } else {  %>
@@ -79,14 +74,12 @@
 <%    if(allTodo[i].category === "In Your Neighborhood"){  %>
         <div class="todo-item">
             <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
-            Description: <%=allTodo[i].description%><br/>
-            <form action="index.html" method="post">
-            Completed:   <input type="checkbox" name="" value="">
+            <form action="#" method="POST">
+                <label>
+                    <input type="checkbox">
+                    <span>Completed</span>
+                </label>
             </form>
-            <form class="btn deletebtn" action="/todo/<%allTodo[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
-            </form>
-            <button><a href"/todo/<%=id%>/edit">Edit</a></button>
         </div>
 
 <%    } else {  %>

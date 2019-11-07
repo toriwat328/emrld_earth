@@ -6,5 +6,23 @@
     </head>
     <body>
         <h1>EDIT ITEM</h1>
+        <a href="/todo/<%=todo.id%>">Back to Item</a>
+        <form action="/todo/<%=todo.id%>" method="POST">
+
+
+                <label>Choose A Category</label>
+                <select class="browser-default"id="category" name="category">
+                    <option value="" disabled selected>--Please choose a category--</option>
+                    <option name="category" value="<%=todo.category%>">In Your Home</option>
+                    <option name="category" value="<%=todo.category%>">On Your Table</option>
+                    <option name="category" value="<%=todo.category%>">Along Your Commute</option>
+                    <option name="category" value="<%=todo.category%>">In Your Neighborhood</option>
+                </select></br/>
+
+
+            Action: <input type="text" name="action" value="<%=todo.action%>"/><br/>
+            Description: <input type="textarea" name="description" <%=todo.description%>/><br/>
+            <input type="submit" value="EDIT TODO">
+        </form>
     </body>
 </html>
