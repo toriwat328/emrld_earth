@@ -13,11 +13,15 @@
     <%    for(let i = 0; i < allTodo.length; i++){ %>
         <%    if(allTodo[i].category === "In Your Home"){  %>
                 <div class="todo-item">
-                    Action: <%=allTodo[i].action%><br/>
+                    <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
                     Description: <%=allTodo[i].description%><br/>
                     <form action="index.html" method="post">
                     Completed:   <input type="checkbox" name="" value="">
                     </form>
+                    <form class="btn deletebtn" action="/todo/<%=allTodo[i].id%>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+                    </form>
+                    <button><a href"/todo/<%=id%>/edit">Edit</a></button>
                 </div>
 
         <%    } else {  %>
@@ -30,11 +34,15 @@
     <%    for(let i = 0; i < allTodo.length; i++){ %>
         <%    if(allTodo[i].category === "On Your Table"){  %>
                 <div class="todo-item">
-                    Action: <%=allTodo[i].action%><br/>
+                    <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
                     Description: <%=allTodo[i].description%><br/>
                     <form action="index.html" method="post">
                     Completed:   <input type="checkbox" name="" value="">
                     </form>
+                    <form class="btn deletebtn" action="/todo/<%=allTodo[i].id%>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+                    </form>
+                    <button><a href"/todo/<%=id%>/edit">Edit</a></button>
                 </div>
 
         <%    } else {  %>
@@ -47,11 +55,15 @@
 <%    for(let i = 0; i < allTodo.length; i++){ %>
     <%    if(allTodo[i].category === "Along Your Commute"){  %>
             <div class="todo-item">
-                Action: <%=allTodo[i].action%><br/>
+                <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
                 Description: <%=allTodo[i].description%><br/>
                 <form action="index.html" method="post">
                 Completed:   <input type="checkbox" name="" value="">
                 </form>
+                <form class="btn deletebtn" action="/todo/<%=allTodo[i].id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE">
+                </form>
+                <button><a href"/todo/<%=id%>/edit">Edit</a></button>
             </div>
 
     <%    } else {  %>
@@ -66,11 +78,15 @@
 <%    for(let i = 0; i < allTodo.length; i++){ %>
 <%    if(allTodo[i].category === "In Your Neighborhood"){  %>
         <div class="todo-item">
-            Action: <%=allTodo[i].action%><br/>
+            <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
             Description: <%=allTodo[i].description%><br/>
             <form action="index.html" method="post">
             Completed:   <input type="checkbox" name="" value="">
             </form>
+            <form class="btn deletebtn" action="/todo/<%allTodo[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE">
+            </form>
+            <button><a href"/todo/<%=id%>/edit">Edit</a></button>
         </div>
 
 <%    } else {  %>
