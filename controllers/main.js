@@ -4,9 +4,10 @@ const User = require('../models/users.js');
 
 //Get route to go to main after user signs up or logs in
 router.get('/', (req, res) => {
-        User.find({}, (error, foundUser) => {
+        User.findOne({username: req.session.username}, (error, foundUser) => {
             res.render('main/index.ejs', {
                 username: req.session.username,
+                firstname: foundUser.firstname
             });
         })
 })
