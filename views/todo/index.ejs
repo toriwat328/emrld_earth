@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
     </head>
     <body>
         <h1>TODO INDEX</h1>
@@ -16,11 +17,20 @@
         <%    if(allTodo[i].category === "In Your Home"){  %>
                 <div class="todo-item">
                     <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
-                    <form action="#" method="POST">
-                        <label>
-                            <input type="checkbox">
+                    <form action="/tracker" method="POST">
+                        <label for="check-home">
+                            <input type="checkbox" id="check-home" name='completed'
+                             <%    if(allTodo[i].completed === true) {   %>
+
+                                        checked
+
+                                    <%    }   %>
+
+                                    />
+
                             <span>Completed</span>
-                        </label>
+                        </label><br/>
+
                     </form>
                 </div>
 
@@ -36,10 +46,18 @@
                 <div class="todo-item">
                     <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
                     <form action="#" method="POST">
-                        <label>
-                            <input type="checkbox">
+                        <label for="check-table">
+                            <input type="checkbox" id="check-table" name='completed'
+                            <%    if(allTodo[i].completed === true) {   %>
+
+                                       checked
+
+                                   <%    }   %>
+
+                                   />
+
                             <span>Completed</span>
-                        </label>
+                        </label><br/>
                     </form>
                 </div>
 
@@ -55,10 +73,19 @@
             <div class="todo-item">
                 <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
                 <form action="#" method="POST">
-                    <label>
-                        <input type="checkbox">
+                    <label for="check-commute">
+                        <input type="checkbox" id="check-commute" name='completed'
+                        <%    if(allTodo[i].completed === true) {   %>
+
+                                   checked
+
+                               <%    }   %>
+
+                               />
+
                         <span>Completed</span>
-                    </label>
+                    </label><br/>
+
                 </form>
             </div>
 
@@ -76,10 +103,18 @@
         <div class="todo-item">
             <a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a>
             <form action="#" method="POST">
-                <label>
-                    <input type="checkbox">
+                <label for="check-neigh">
+                    <input type="checkbox"  id="check-neigh" name='completed'
+                    <%    if(allTodo[i].completed === true) {   %>
+
+                               checked
+
+                           <%    }   %>
+
+                           />
+
                     <span>Completed</span>
-                </label>
+                </label> <br/>
             </form>
         </div>
 
@@ -89,8 +124,20 @@
 
 <%    }  %>
 
+<script>
+$(document).ready(function() {
 
+});
 
+//checking to see what the value is when i click on completed checkbox
+function value_() {
+  var checkbox = document.getElementById('mycheckbox');
+  alert('checkbox value: ' + checkbox.checked)
+
+}
+</script>
+
+<!-- onclick="value_()" -->
 
     </body>
 </html>

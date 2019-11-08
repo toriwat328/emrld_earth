@@ -3,8 +3,113 @@
     <head>
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+        <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <h1>WELCOME</h1>
+        <h1>TRACKER</h1>
+        <a href="/main">Back to Dashboard</a><br/>
+        <a href="/todo">Back to Reminders</a><br/>
+        <h5>Keep Track of Your Goals By Category</h5>
+        <p>When you complete a todo, it will be added to the trackers below.</p>
+
+        <h3>In Your Home</h3>
+
+        <div class="tracker">
+            <div id="home-tracker">
+                <div class="goal1" id="goal1-0">
+
+                </div>
+                <div class="goal2" id="goal1-1">
+
+                </div>
+                <div class="goal3" id="goal1-2">
+
+                </div>
+                <div class="goal4" id="goal1-3">
+
+                </div>
+                <div class="goal5" id="goal1-4">
+
+                </div>
+            </div>
+            <i class="large material-icons">home</i>
+        </div>
+
+        <h3>On Your Table</h3>
+        <div class="tracker">
+            <div id="table-tracker">
+                <div class="goal1" id="goal2-1">
+
+                </div>
+                <div class="goal2" id="goal2-2">
+
+                </div>
+                <div class="goal3" id="goal2-3">
+
+                </div>
+                <div class="goal4" id="goal3-4">
+
+                </div>
+                <div class="goal5" id="goal4-5">
+
+                </div>
+            </div>
+            <i class="large material-icons">local_drink</i>
+        </div>
+
+        <h3>Along Your Commute</h3>
+        <div class="tracker">
+            <div id="commute-tracker">
+                <div class="goal1" id="goal3-1">
+
+                </div>
+                <div class="goal2" id="goal3-2">
+
+                </div>
+                <div class="goal3" id="goal3-3">
+
+                </div>
+                <div class="goal4" id="goal3-4">
+
+                </div>
+                <div class="goal5" id="goal3-5">
+
+                </div>
+            </div>
+            <i class="large material-icons">train</i>
+        </div>
+
+        <h3>In Your Neighborhood</h3>
+        <div class="tracker">
+            <div id="neigh-tracker">
+                <div class="goal1" id="goal4-1">
+
+                </div>
+                <div class="goal2" id="goal4-2">
+
+                </div>
+                <div class="goal3" id="goal4-3">
+
+                </div>
+                <div class="goal4" id="goal4-4">
+
+                </div>
+                <div class="goal5" id="goal4-5">
+
+                </div>
+            </div>
+            <i class="large material-icons">public</i>
+        </div>
+        <!-- <span id='variableJSON' hidden>
+            <%= JSON.stringify(allTodo); %>
+        </span> -->
+        <script>
+             var allTodo = <%- JSON.stringify(allTodo) %>;
+        </script>
+        <script src="/app.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>

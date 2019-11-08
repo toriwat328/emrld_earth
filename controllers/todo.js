@@ -19,17 +19,28 @@ router.get('/', (req, res) => {
 
 //NEW ROUTE (2)
 router.get('/new', (req, res) => {
-    res.render('todo/new.ejs')
+    res.render('todo/new.ejs', {
+
+    })
 })
 
 //POST ROUTE (3)
 router.post('/', (req, res) => {
 
     User.findOne({username: req.session.username}, (error, foundUser) => {
+        if(req.body.completed === 'on'){
+
+        req.body.completed = true;
+
+    } else {
+
+        req.body.completed = false;
+
+    }
         foundUser.todo.push(req.body)
         foundUser.save();
         console.log(req.session.username);
-        // console.log(foundUser);
+        console.log(foundUser);
         res.redirect('/todo');
 
     })
@@ -74,14 +85,25 @@ router.get('/:id/edit', (req, res) => {
 // PUT ROUTE (7)
 router.put('/:id/', (req, res) => {
     User.findOne({username: req.session.username}, (error, foundUser) => {
+        if(req.body.completed === 'on'){
+
+        req.body.completed = true;
+
+    } else {
+
+        req.body.completed = false;
+
+    }
         foundUser.todo.id(req.params.id).category = req.body.category;
         foundUser.todo.id(req.params.id).action = req.body.action;
         foundUser.todo.id(req.params.id).description = req.body.description;
+        foundUser.todo.id(req.params.id).completed = req.body.completed;
         foundUser.save();
         res.redirect('/todo/')
     })
 
 })
+
 
 
 module.exports = router;

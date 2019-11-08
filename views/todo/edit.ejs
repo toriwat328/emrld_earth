@@ -23,6 +23,18 @@
 
             Action: <input type="text" name="action" value="<%=todo.action%>"/><br/>
             Description: <input type="textarea" name="description" value="<%=todo.description%>"/><br/>
+            <label for="check-edit">
+                <input type="checkbox" id="check-edit" name="completed"
+                <%    if(todo.completed === true) {   %>
+
+                        checked
+
+                    <%    }   %>
+
+                    />
+                <span>Completed</span>
+            </label><br/>
+
             <input type="submit" value="EDIT TODO">
         </form>
     </body>

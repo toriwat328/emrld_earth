@@ -4,7 +4,7 @@ const todoSchema = new mongoose.Schema({
     category: {type: String},
     action: {type: String},
     description: {type: String},
-    completed: Boolean
+    completed: {type: Boolean, default: false}
 });
 
 

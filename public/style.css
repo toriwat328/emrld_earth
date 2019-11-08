@@ -1,0 +1,70 @@
+/* Tracker Styling */
+
+.tracker {
+    display: flex;
+    flex-direction: row;
+}
+
+#home-tracker {
+    height: 100px;
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+#table-tracker {
+    height: 100px;
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+#commute-tracker {
+    height: 100px;
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+#neigh-tracker {
+    height: 100px;
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.goal1 {
+    height: 100px;
+    width: 20%;
+    border-right: 1px solid black;
+}
+
+.goal2 {
+    height: 100px;
+    width: 20%;
+    border-right: 1px solid black;
+}
+
+.goal3 {
+    height: 100px;
+    width: 20%;
+    border-right: 1px solid black;
+}
+
+.goal4 {
+    height: 100px;
+    width: 20%;
+    border-right: 1px solid black;
+}
+
+.goal5 {
+    height: 100px;
+    width: 20%;
+
+}
+
+/* End of Tracker Styling */
