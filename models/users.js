@@ -7,6 +7,19 @@ const todoSchema = new mongoose.Schema({
     completed: {type: Boolean, default: false}
 });
 
+const footprintSchema = new mongoose.Schema({
+    household: {type: String},
+    naturalgasbill: {type: Number},
+    electricitybill: {type: Number},
+    fueloilbill: {type: Number},
+    propanebill: {type: Number},
+    naturalgas: {type: Number},
+    electricity: {type: Number},
+    fueloil: {type: Number},
+    propane: {type: Number},
+    footprint: {type: Number}
+});
+
 
 const userSchema = new mongoose.Schema({
     firstname: {type: String, required: true},
@@ -14,7 +27,8 @@ const userSchema = new mongoose.Schema({
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
-    todo: [todoSchema]
+    todo: [todoSchema],
+    footprint: [footprintSchema]
 });
 
 

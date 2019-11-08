@@ -64,6 +64,8 @@ app.use('/todo', todoController)
 const trackerController = require('./controllers/tracker.js')
 app.use('/tracker', trackerController)
 
+const carbonController = require('./controllers/carbon.js')
+app.use('/carbon', carbonController)
 //-----------------------------------
 //ROUTES
 //-----------------------------------

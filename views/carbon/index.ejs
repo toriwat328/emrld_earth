@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EMRLD EARTH</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <h1>CALCULATE CARBON FOOTPRINT</h1>
+        <a href="/main">Back To Dashboard</a><br/>
+        <h3>HOME ENERGY</h3>
+        <p>Enter your average monthly bill for each source of energy your household uses</p>
+        <p>Click the icons, below for each U.S. average</p>
+
+
+        <form action="/carbon" method="POST">
+            Number of People In Your Household: <input type="text" name="household">
+        </form>
+
+        <div class="natural-gas">
+            <h5>Natural Gas</h5>
+            <form action="/carbon" method="POST">
+                <input type="text" name="naturalgasbill" placeholder="Enter Avg. Monthly Gas Bill">
+                <input type="submit" value="CALCULATE NATURAL GAS EMISSION">
+            </form>
+        </div>
+        <div class="electricity">
+            <h5>Electricity</h5>
+            <form action="/carbon" method="POST">
+                <input type="text" name="electricitybill" placeholder="Enter Avg. Monthly Electricity Bill">
+                <input type="submit" value="CALCULATE ELECTRICITY EMISSION">
+            </form>
+        </div>
+        <div class="fuel-oil">
+            <h5>Fuel Oil</h5>
+            <form action="/carbon" method="POST">
+                <input type="text" name="fueloilbill" placeholder="Enter Avg. Monthly Fuel Oil Consumption">
+                <input type="submit" value="CALCULATE FUEL OIL EMISSION">
+            </form>
+        </div>
+        <div class="propane">
+            <h5>Propane</h5>
+            <form action="/carbon" method="POST">
+                <input type="text" name="propanebill" placeholder="Enter Avg. Monthly Propane Consumption">
+                <input type="submit" value="CALCULATE PROPANE EMISSION">
+            </form>
+        </div>
+        <div class="carbon-footprint">
+            <h5>Your Carbon Footprint</h5>
+            <p>Annual CO2 emissions (lbs.)</p>
+
+
+        </div>
+    </body>
+</html>
