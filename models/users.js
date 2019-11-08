@@ -8,7 +8,7 @@ const todoSchema = new mongoose.Schema({
 });
 
 const footprintSchema = new mongoose.Schema({
-    household: {type: String},
+    household: {type: Number},
     naturalgasbill: {type: Number},
     electricitybill: {type: Number},
     fueloilbill: {type: Number},

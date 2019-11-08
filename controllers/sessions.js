@@ -21,6 +21,7 @@ router.post('/', (req, res) => {
                 req.session.username = foundUser.username;
                 res.redirect('/main');
                 console.log('found');
+                console.log(foundUser);
             } else {
                 res.redirect('/sessions/new')
                 console.log(req.body.password);

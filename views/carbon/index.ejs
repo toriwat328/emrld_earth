@@ -9,45 +9,52 @@
         <h1>CALCULATE CARBON FOOTPRINT</h1>
         <a href="/main">Back To Dashboard</a><br/>
         <h3>HOME ENERGY</h3>
-        <p>Enter your average monthly bill for each source of energy your household uses</p>
+        <p>Enter your average monthly bill for each source of energy your household uses (enter as USD without $)</p>
         <p>Click the icons, below for each U.S. average</p>
 
 
         <form action="/carbon" method="POST">
-            Number of People In Your Household: <input type="text" name="household">
-        </form>
+            <label>Number of People In Your Household</label>
+            <select class="browser-default" id="household" name="household">
+                <option value="" disabled selected>--Please choose number--</option>
+                <option name="household" value="1"<% if (footprint[0].household == "1") { %>selected<% } %> >1</option>
+                <option name="household" value="2"<% if (footprint[0].household == "2") { %>selected<% } %> >2</option>
+                <option name="household" value="3"<% if (footprint[0].household == "3") { %>selected<% } %> >3</option>
+                <option name="household" value="4"<% if (footprint[0].household == "4") { %>selected<% } %> >4</option>
+                <option name="household" value="5"<% if (footprint[0].household == "5") { %>selected<% } %> >5</option>
+            </select></br/>
 
-        <div class="natural-gas">
-            <h5>Natural Gas</h5>
-            <form action="/carbon" method="POST">
-                <input type="text" name="naturalgasbill" placeholder="Enter Avg. Monthly Gas Bill">
-                <input type="submit" value="CALCULATE NATURAL GAS EMISSION">
+            Natural Gas <input type="text" name="naturalgasbill" value="<%=footprint[0].naturalgasbill%>" placeholder="Enter Avg. Monthly Gas Bill"></br/>
+
+            Electricity <input type="text" name="electricitybill" value="<%=footprint[0].electricitybill%>"placeholder="Enter Avg. Monthly Electricity Bill"></br/>
+
+            Fuel Oil<input type="text" name="fueloilbill" value="<%=footprint[0].fueloilbill%>" placeholder="Enter Avg. Monthly Fuel Oil Consumption"></br/>
+
+            Propane <input type="text" name="propanebill" value="<%=footprint[0].propanebill%>" placeholder="Enter Avg. Monthly Propane Consumption"></br/>
+
+                <input type="submit" value="CALCULATE HOME ENERGY EMISSION">
             </form>
-        </div>
-        <div class="electricity">
-            <h5>Electricity</h5>
-            <form action="/carbon" method="POST">
-                <input type="text" name="electricitybill" placeholder="Enter Avg. Monthly Electricity Bill">
-                <input type="submit" value="CALCULATE ELECTRICITY EMISSION">
-            </form>
-        </div>
-        <div class="fuel-oil">
-            <h5>Fuel Oil</h5>
-            <form action="/carbon" method="POST">
-                <input type="text" name="fueloilbill" placeholder="Enter Avg. Monthly Fuel Oil Consumption">
-                <input type="submit" value="CALCULATE FUEL OIL EMISSION">
-            </form>
-        </div>
-        <div class="propane">
-            <h5>Propane</h5>
-            <form action="/carbon" method="POST">
-                <input type="text" name="propanebill" placeholder="Enter Avg. Monthly Propane Consumption">
-                <input type="submit" value="CALCULATE PROPANE EMISSION">
-            </form>
-        </div>
+
+
         <div class="carbon-footprint">
             <h5>Your Carbon Footprint</h5>
             <p>Annual CO2 emissions (lbs.)</p>
+            <%    if(footprint[0] !== [ ]){  %>
+                        Natural Gas Emissions: <% const sum1 = Math.floor((footprint[0].naturalgasbill / 10.68) * 119.58 * 12/footprint[0].household) %><%=sum1%>lbs.</br/>
+                        Electricity Emissions: <% const sum2 = Math.floor((footprint[0].electricitybill/ 0.1188) * 1.238516 * 12/footprint[0].household) %><%=sum2%>lbs.</br/>
+                        Fuel Oil Emissions: <% const sum3 = Math.floor((footprint[0].fueloilbill / 4.02) * 22.61 * 12/footprint[0].household) %><%=sum3%>lbs.</br/>
+                        Propane Emissions: <%  const sum4 = Math.floor((footprint[0].propanebill / 2.47) * 12.43 * 12/footprint[0].household) %><%=sum4%>lbs.</br/>
+
+                        <h5>Your Total Annual Carbon Footprint</h5>
+                        <p>Per person for a household of <%=footprint[0].household%> in the US. The US Average Footprint is 15,617 lbs per person. </p>
+                        <h4><%=sum1 + sum2 + sum3 + sum4 %> lbs.</h4>
+
+                <%    } else {  %>
+
+
+                    Enter Information Above To Calculate Footprint
+
+                    <%    }   %>
 
 
         </div>
