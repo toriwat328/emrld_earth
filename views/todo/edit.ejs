@@ -4,38 +4,57 @@
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/todo.css">
     </head>
     <body>
-        <h1>EDIT ITEM</h1>
-        <a href="/todo/<%=todo.id%>">Back to Item</a>
-        <form action="/todo/<%=todo.id%>?_method=PUT" method="POST">
+        <header>
+            <nav>
+            <div class="nav-wrapper amber darken-1">
+              <a href="/earth" class="brand-logo">EMRLD EARTH</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/main">Dashboard</a></li>
+                <li><a href="/todo">Reminders</a></li>
+                <li><a href="/carbon">Calculator</a></li>
+              </ul>
+            </div>
+          </nav>
+      </header>
+
+      <div class="container">
+          <h1>EDIT REMINDER</h1>
+          <a class="link" href="/todo/<%=todo.id%>">Back to Item</a>
+          <form action="/todo/<%=todo.id%>?_method=PUT" method="POST">
+
+              <fieldset>
+                  <label>Choose A Category</label>
+                  <select class="browser-default"id="category" name="category" value="<%=todo.category%>">
+                      <option value="<%=todo.category%>" disabled selected>--Please choose a category--</option>
+                      <option name="category" value="In Your Home" <% if (todo.category == "In Your Home") { %>selected<% } %> >In Your Home</option>
+                      <option name="category" value="On Your Table" <% if (todo.category == "On Your Table") { %>selected<% } %>>On Your Table</option>
+                      <option name="category" value="Along Your Commute" <% if (todo.category == "Along Your Commute") { %>selected<% } %>>Along Your Commute</option>
+                      <option name="category" value="In Your Neighborhood" <% if (todo.category == "In Your Neighborhood") { %>selected<% } %>>In Your Neighborhood</option>
+                  </select></br/>
 
 
-                <label>Choose A Category</label>
-                <select class="browser-default"id="category" name="category" value="<%=todo.category%>">
-                    <option value="<%=todo.category%>" disabled selected>--Please choose a category--</option>
-                    <option name="category" value="In Your Home" <% if (todo.category == "In Your Home") { %>selected<% } %> >In Your Home</option>
-                    <option name="category" value="On Your Table" <% if (todo.category == "On Your Table") { %>selected<% } %>>On Your Table</option>
-                    <option name="category" value="Along Your Commute" <% if (todo.category == "Along Your Commute") { %>selected<% } %>>Along Your Commute</option>
-                    <option name="category" value="In Your Neighborhood" <% if (todo.category == "In Your Neighborhood") { %>selected<% } %>>In Your Neighborhood</option>
-                </select></br/>
+              Action: <input type="text" name="action" value="<%=todo.action%>"/><br/>
+              Description: <input type="textarea" name="description" value="<%=todo.description%>"/><br/>
+              <label for="check-edit">
+                  <input type="checkbox" id="check-edit" name="completed"
+                  <%    if(todo.completed === true) {   %>
 
+                          checked
 
-            Action: <input type="text" name="action" value="<%=todo.action%>"/><br/>
-            Description: <input type="textarea" name="description" value="<%=todo.description%>"/><br/>
-            <label for="check-edit">
-                <input type="checkbox" id="check-edit" name="completed"
-                <%    if(todo.completed === true) {   %>
+                      <%    }   %>
 
-                        checked
+                      />
+                  <span>Completed</span>
+              </label><br/>
 
-                    <%    }   %>
+              <input class="waves-effect waves-light btn amber darken-1"type="submit" value="EDIT TODO">
+              </fieldset>
 
-                    />
-                <span>Completed</span>
-            </label><br/>
+          </form>
+      </div>
 
-            <input type="submit" value="EDIT TODO">
-        </form>
     </body>
 </html>

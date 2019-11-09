@@ -4,34 +4,36 @@
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/welcome.css">
     </head>
     <body>
-        <div class="container">
-            <div class="sign-up">
-                <h1>WELCOME TO EMRLD EARTH</h1>
-                <h3>Sign up to keep track of your loving contributions to EARTH</h3>
-                <form action="/" method="POST">
-                    <input type="text" name="firstname" placeholder="First Name"/><br/>
-                    <input type="text" name="lastname" placeholder="Last Name"/><br/>
-                    <input type="text" name="username" placeholder="Username"/><br/>
-                    <input type="password" name="password" placeholder="Password"/><br/>
-                    <input type="text" name="email" placeholder="Email"/><br/>
-                    <input type="submit" value="Sign Up"/><br/>
-                    <p>By signing up, you agree to our Terms, Data Policy and Cookies Policy</p>
-                </form>
+        <div class="row">
+            <div class="col s5 offset-s6">
+                <div class="sign-up">
+                    <h4>WELCOME TO</h4>
+                    <h1>EMRLD EARTH</h1>
+                    <h5>Sign up to keep track of your loving contributions to EARTH</h5>
+                    <form action="/" method="POST">
+                        <fieldset>
+                            <input type="text" name="firstname" placeholder="First Name"/><br/>
+                            <input type="text" name="lastname" placeholder="Last Name"/><br/>
+                            <input type="text" name="username" placeholder="Username"/><br/>
+                            <input type="password" name="password" placeholder="Password"/><br/>
+                            <input type="text" name="email" placeholder="Email"/><br/>
+                            <input class="waves-effect waves-light btn amber darken-1"type="submit" value="Sign Up"/><br/>
+                            <p>By signing up, you agree to our Terms, Data Policy and Cookies Policy</p>
+                        </fieldset>
+
+                    </form>
+                </div>
+
+
+                <div class="login">
+                    <p>Have an account? <a href="/sessions/new">Log In</a></p>
+                </div>
+
             </div>
-
-
-            <div class="login">
-                Have an account? <a href="/sessions/new">Log In</a>
-            </div>
-
         </div>
-
-
-
-
-
 
 
     </body>

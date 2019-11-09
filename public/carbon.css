@@ -1,0 +1,34 @@
+.brand-logo {
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #ffb300;
+}
+
+.container{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-weight: 100;
+    text-shadow: 2px 2px 2px #ffb300;
+}
+
+fieldset {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.carbon-footprint {
+    background-color: #26a69a;
+    padding: 20px;
+    border: 10px solid #e0f2f1;
+}
+
+h4 {
+    color: #ffb300;
+    font-weight: 900;
+}
+
+h5 {
+    color: white;
+}

@@ -4,20 +4,38 @@
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/todo.css">
     </head>
     <body>
-        <h1>SHOW TODO</h1>
-        <a href="/todo">Back to To-Do</a>
+        <header>
+            <nav>
+            <div class="nav-wrapper amber darken-1">
+              <a href="/earth" class="brand-logo">EMRLD EARTH</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/main">Dashboard</a></li>
+                <li><a href="/todo">Reminders</a></li>
+                <li><a href="/carbon">Calculator</a></li>
+              </ul>
+            </div>
+          </nav>
+      </header>
+      <div class="container">
+          <h1>REMINDER DETAILS</h1>
 
-        <h5>Category:</h5> <p><%=todo.category%></p><br/>
-        <h5>Action:</h5> <p><%=todo.action%></p><br/>
-        <h5>Description:</h5> <p><%=todo.description%></p><br/>
+          <h5>Category:</h5> <p><%=todo.category%></p><br/>
+          <h5>Action:</h5> <p><%=todo.action%></p><br/>
+          <h5>Description:</h5> <p><%=todo.description%></p><br/>
+
+          <div class="show-buttons">
+              <form action="/todo/<%=todo.id%>?_method=DELETE" method="POST">
+                  <input class="waves-effect waves-light btn amber darken-1" type="submit" value="DELETE">
+              </form>
+
+              <a href="/todo/<%=todo.id%>/edit" class="waves-effect waves-light btn amber darken-1">Edit</a>
+          </div>
 
 
-        <form class="btn deletebtn" action="/todo/<%=todo.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE">
-        </form>
-        <button><a href="/todo/<%=todo.id%>/edit">Edit</a></button>
+      </div>
 
 
 

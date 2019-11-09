@@ -1,0 +1,58 @@
+.container{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-weight: 100;
+    text-shadow: 2px 2px 2px #26a69a;
+}
+
+.brand-logo {
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #26a69a;
+}
+
+.internal-nav a {
+    color: white;
+}
+
+.internal-nav {
+    text-align: center;
+}
+
+.internal-nav a:hover {
+    color: black;
+}
+
+.todo-item a {
+    color: #26a69a;
+}
+
+.todo-item a:hover {
+    color: black;
+}
+
+fieldset {
+    text-align: left;
+}
+
+.show-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.show-buttons a:hover {
+    color: black;
+}
+.show-buttons input[type="text"]:hover {
+    color: black;
+}
+
+.link {
+    color: #26a69a;
+}
+.link:hover {
+    color: black;
+}

@@ -7,107 +7,142 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
 
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/tracker.css">
     </head>
     <body>
-        <h1>TRACKER</h1>
-        <a href="/main">Back to Dashboard</a><br/>
-        <a href="/todo">Back to Reminders</a><br/>
-        <h5>Keep Track of Your Goals By Category</h5>
-        <p>When you complete a todo, it will be added to the trackers below.</p>
-
-        <h3>In Your Home</h3>
-
-        <div class="tracker">
-            <div id="home-tracker">
-                <div class="goal1" id="goal1-0">
-
-                </div>
-                <div class="goal2" id="goal1-1">
-
-                </div>
-                <div class="goal3" id="goal1-2">
-
-                </div>
-                <div class="goal4" id="goal1-3">
-
-                </div>
-                <div class="goal5" id="goal1-4">
-
-                </div>
-                
+        <header>
+            <nav>
+            <div class="nav-wrapper grey darken-1">
+              <a href="/earth" class="brand-logo">EMRLD EARTH</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/main">Dashboard</a></li>
+                <li><a href="/todo">Reminders</a></li>
+                <li><a href="/carbon">Calculator</a></li>
+              </ul>
             </div>
-            <i class="large material-icons">home</i>
-        </div>
+          </nav>
+      </header>
 
-        <h3>On Your Table</h3>
-        <div class="tracker">
-            <div id="table-tracker">
-                <div class="goal1" id="goal2-0">
+      <div class="container">
+          <h1>TRACKER</h1>
+          <h5>Keep Track of Your Goals By Category</h5>
+          <p>When you complete your reminder goal, it will be automatically added to the trackers below.</p>
 
-                </div>
-                <div class="goal2" id="goal2-1">
+          <h3>In Your Home</h3>
 
-                </div>
-                <div class="goal3" id="goal2-2">
+          <div class="tracker">
+              <div id="home-tracker">
+                  <div class="goal1" id="goal1-0">
 
-                </div>
-                <div class="goal4" id="goal3-3">
+                  </div>
+                  <div class="goal2" id="goal1-1">
 
-                </div>
-                <div class="goal5" id="goal4-4">
+                  </div>
+                  <div class="goal3" id="goal1-2">
 
-                </div>
+                  </div>
+                  <div class="goal4" id="goal1-3">
+
+                  </div>
+                  <div class="goal5" id="goal1-4">
+
+                  </div>
+
+              </div>
+              <i class="large material-icons">home</i>
+          </div>
+
+          <h3>On Your Table</h3>
+          <div class="tracker">
+              <div id="table-tracker">
+                  <div class="goal1" id="goal2-0">
+
+                  </div>
+                  <div class="goal2" id="goal2-1">
+
+                  </div>
+                  <div class="goal3" id="goal2-2">
+
+                  </div>
+                  <div class="goal4" id="goal3-3">
+
+                  </div>
+                  <div class="goal5" id="goal4-4">
+
+                  </div>
+              </div>
+              <i class="large material-icons">local_drink</i>
+          </div>
+
+          <h3>Along Your Commute</h3>
+          <div class="tracker">
+              <div id="commute-tracker">
+                  <div class="goal1" id="goal3-0">
+
+                  </div>
+                  <div class="goal2" id="goal3-1">
+
+                  </div>
+                  <div class="goal3" id="goal3-2">
+
+                  </div>
+                  <div class="goal4" id="goal3-3">
+
+                  </div>
+                  <div class="goal5" id="goal3-4">
+
+                  </div>
+              </div>
+              <i class="large material-icons">train</i>
+          </div>
+
+          <h3>In Your Neighborhood</h3>
+          <div class="tracker">
+              <div id="neigh-tracker">
+                  <div class="goal1" id="goal4-0">
+
+                  </div>
+                  <div class="goal2" id="goal4-1">
+
+                  </div>
+                  <div class="goal3" id="goal4-2">
+
+                  </div>
+                  <div class="goal4" id="goal4-3">
+
+                  </div>
+                  <div class="goal5" id="goal4-4">
+
+                  </div>
+              </div>
+              <i class="large material-icons">public</i>
+          </div>
+      </div>
+      <footer class="page-footer grey darken-1">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
-            <i class="large material-icons">local_drink</i>
-        </div>
-
-        <h3>Along Your Commute</h3>
-        <div class="tracker">
-            <div id="commute-tracker">
-                <div class="goal1" id="goal3-0">
-
-                </div>
-                <div class="goal2" id="goal3-1">
-
-                </div>
-                <div class="goal3" id="goal3-2">
-
-                </div>
-                <div class="goal4" id="goal3-3">
-
-                </div>
-                <div class="goal5" id="goal3-4">
-
-                </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
             </div>
-            <i class="large material-icons">train</i>
+          </div>
         </div>
-
-        <h3>In Your Neighborhood</h3>
-        <div class="tracker">
-            <div id="neigh-tracker">
-                <div class="goal1" id="goal4-0">
-
-                </div>
-                <div class="goal2" id="goal4-1">
-
-                </div>
-                <div class="goal3" id="goal4-2">
-
-                </div>
-                <div class="goal4" id="goal4-3">
-
-                </div>
-                <div class="goal5" id="goal4-4">
-
-                </div>
-            </div>
-            <i class="large material-icons">public</i>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
         </div>
-        <!-- <span id='variableJSON' hidden>
-            <%= JSON.stringify(allTodo); %>
-        </span> -->
+      </footer>
         <script>
              var allTodo = <%- JSON.stringify(allTodo) %>;
         </script>

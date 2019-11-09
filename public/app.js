@@ -23,7 +23,7 @@ for(let i = 0; i < homeArray.length; i++){
         alert("You Completed Your 'In Your Home' Goal!")
         break
     } else {
-        $('#goal1-' +i).css('background-color', 'black')
+        $('#goal1-' +i).css('background-color', '#26a69a')
     }
 
 }
@@ -44,7 +44,7 @@ for(let i = 0; i < tableArray.length; i++){
         alert("You Completed Your 'On Your Table' Goal!")
         break
     } else {
-        $('#goal2-' +i).css('background-color', 'black')
+        $('#goal2-' +i).css('background-color', '#ffb300')
     }
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -64,7 +64,7 @@ for(let i = 0; i < commuteArray.length; i++){
         alert("You Completed Your 'Along Your Commute' Goal!")
         break
     } else {
-        $('#goal3-' +i).css('background-color', 'black')
+        $('#goal3-' +i).css('background-color', '#757575')
     }
 }
 //////////////////////////////////////////////////////////////////////////////
@@ -84,7 +84,7 @@ for(let i = 0; i < neighArray.length; i++){
         alert("You Completed Your 'In Your Neighborhood' Goal!")
         break
     } else {
-        $('#goal4-' +i).css('background-color', 'black')
+        $('#goal4-' +i).css('background-color', '#b2dfdb')
     }
 }
 //////////////////////////////////////////////////////////////////////////////

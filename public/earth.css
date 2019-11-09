@@ -1,0 +1,30 @@
+h1 {
+    font-weight: 100;
+    text-shadow: 2px 2px 2px #ffb300;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+.brand-logo {
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #ffb300;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+.internal-nav a {
+    color: #ffb300;
+}
+
+.internal-nav {
+    text-align: center;
+}
+
+.internal-nav a:hover {
+    color: black;
+}

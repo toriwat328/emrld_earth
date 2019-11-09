@@ -1,0 +1,26 @@
+body {
+    background-color: #26a69a;
+    color: white;
+}
+
+fieldset {
+    background-color: #e0f2f1;
+    color: black;
+    font-weight: 200;
+    border: 10px solid #ffb300;
+}
+
+h1 {
+    font-weight: 900;
+    text-align: center;
+}
+
+p {
+    font-weight: 200;
+}
+
+
+a {
+    color: white;
+    font-weight: 200;
+}

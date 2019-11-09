@@ -8,7 +8,7 @@
 #home-tracker {
     height: 100px;
     width: 85%;
-    border: 1px solid black;
+    border: 1px solid #26a69a;
     display: flex;
     flex-direction: row;
 }
@@ -16,7 +16,7 @@
 #table-tracker {
     height: 100px;
     width: 85%;
-    border: 1px solid black;
+    border: 1px solid #ffb300;
     display: flex;
     flex-direction: row;
 }
@@ -24,7 +24,7 @@
 #commute-tracker {
     height: 100px;
     width: 85%;
-    border: 1px solid black;
+    border: 1px solid #757575;
     display: flex;
     flex-direction: row;
 }
@@ -32,7 +32,7 @@
 #neigh-tracker {
     height: 100px;
     width: 85%;
-    border: 1px solid black;
+    border: 1px solid #b2dfdb;
     display: flex;
     flex-direction: row;
 }
@@ -68,3 +68,22 @@
 }
 
 /* End of Tracker Styling */
+
+.brand-logo {
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #26a69a;
+}
+
+h1 {
+    font-weight: 100;
+    text-align: center;
+    text-shadow: 2px 2px 2px #26a69a;
+}
+
+h5, p {
+    text-align: center;
+}
+
+.container {
+    margin-bottom: 50px;
+}

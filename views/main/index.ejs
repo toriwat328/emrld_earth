@@ -4,22 +4,103 @@
         <meta charset="utf-8">
         <title>EMRLD EARTH</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/main.css">
     </head>
     <body>
-    <%  if(firstname) {  %>
-            <h1>Hello, <%=firstname%>!</h1>
-    <%    }  %>
+        <main class="page-main">
+            <div class="container">
 
 
-        <a href="/earth">EMRLD EARTH</a><br/>
-        <a href="/todo">TODO LIST</a><br/>
-        <a href="/tracker">TRACKER</a><br/>
-        <a href="/carbon">CARBON FOOTPRINT CALCULATOR</a><br/>
+        <%  if(firstname) {  %>
+                <h1>Hello, <%=firstname%>!</h1>
+        <%    }  %>
+
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card teal lighten-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">EMRLD EARTH</span>
+                        <p>50 ways that you can fight climate change, today!</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/earth">EMRLD EARTH</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card teal lighten-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">REMINDER LIST</span>
+                        <p>List of your daily goals towards making earth better.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/todo">REMINDER LIST</a><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card teal lighten-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">TRACKER</span>
+                        <p>Track your progress as you accomplish your goals.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/tracker">TRACKER</a><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card teal lighten-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">CARBON FOOTPRINT CALCULATOR</span>
+                        <p>Calculate your carbon emission to improve sustainability.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/carbon">CARBON FOOTPRINT CALCULATOR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-        <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Log Out">
-        </form>
 
+            <form action="/sessions?_method=DELETE" method="POST">
+                <input class="waves-effect waves-light btn amber darken-1" type="submit" value="Log Out">
+            </form>
+
+
+
+    </div>
+</main>
+
+
+<footer class="page-footer grey darken-1">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
     </body>
 </html>
