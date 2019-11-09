@@ -32,3 +32,23 @@ h4 {
 h5 {
     color: white;
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.white-text-logo {
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #ffb300;
+}
+
+footer .row {
+    text-align: left;
+}

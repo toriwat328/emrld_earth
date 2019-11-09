@@ -78,6 +78,14 @@ app.post('/', (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (error, createdUser) => {
         req.session.username = createdUser.username
+        createdUser.footprint.push({
+            household: 1,
+            naturalgasbill: 0,
+            electricitybill: 0,
+            fueloilbill: 0,
+            propanebill: 0
+        })
+        createdUser.save();
         console.log(createdUser);
         res.redirect('/main')
     })

@@ -28,3 +28,19 @@ nav {
 .internal-nav a:hover {
     color: black;
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.white-text-logo {
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #ffb300;
+}

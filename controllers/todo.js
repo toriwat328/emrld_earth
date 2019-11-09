@@ -6,101 +6,151 @@ const earthseed = require('../models/earthseed.js');
 
 //INDEX ROUTE (1)
 router.get('/', (req, res) => {
-    User.findOne({username: req.session.username}, (error, foundUser) => {
-        res.render('todo/index.ejs', {
-            allTodo: foundUser.todo,
-            id: foundUser.id
+    if(req.session.username){
+        User.findOne({username: req.session.username}, (error, foundUser) => {
+            res.render('todo/index.ejs', {
+                allTodo: foundUser.todo,
+                id: foundUser.id
+            })
+
         })
 
-    })
+        } else {
+            res.redirect('/');
+        }
 
 
 })
+
+
+
+
+
+
 
 //NEW ROUTE (2)
 router.get('/new', (req, res) => {
-    res.render('todo/new.ejs', {
+    if(req.session.username){
+        res.render('todo/new.ejs', {
 
-    })
+        })
+
+        } else {
+            res.redirect('/');
+        }
 })
+
+
+
 
 //POST ROUTE (3)
 router.post('/', (req, res) => {
+    if(req.session.username){
+        User.findOne({username: req.session.username}, (error, foundUser) => {
+            if(req.body.completed === 'on'){
 
-    User.findOne({username: req.session.username}, (error, foundUser) => {
-        if(req.body.completed === 'on'){
+            req.body.completed = true;
 
-        req.body.completed = true;
+        } else {
 
-    } else {
+            req.body.completed = false;
 
-        req.body.completed = false;
+        }
+            foundUser.todo.push(req.body)
+            foundUser.save();
+            console.log(req.session.username);
+            console.log(foundUser);
+            res.redirect('/todo');
 
-    }
-        foundUser.todo.push(req.body)
-        foundUser.save();
-        console.log(req.session.username);
-        console.log(foundUser);
-        res.redirect('/todo');
+        })
 
-    })
-
+        } else {
+            res.redirect('/');
+        }
 
 })
+
+
 
 //SHOW ROUTE (4)
 router.get('/:id', (req, res) => {
-    User.findOne({username: req.session.username}, (error, foundUser) => {
-        res.render('todo/show.ejs', {
-            allTodo:foundUser.todo,
-            todo: foundUser.todo.id(req.params.id),
-            i: req.params.id
+    if(req.session.username){
+        User.findOne({username: req.session.username}, (error, foundUser) => {
+            res.render('todo/show.ejs', {
+                allTodo:foundUser.todo,
+                todo: foundUser.todo.id(req.params.id),
+                i: req.params.id
+            })
+
         })
 
-    })
+        } else {
+            res.redirect('/');
+        }
 })
+
+
 
 // DELETE ROUTE (5)
 router.delete('/:id', (req, res) => {
-    User.findOne({username: req.session.username}, (error, foundUser) => {
-        foundUser.todo.id(req.params.id).remove();
-        foundUser.save();
-        res.redirect('/todo');
+    if(req.session.username){
+        User.findOne({username: req.session.username}, (error, foundUser) => {
+            foundUser.todo.id(req.params.id).remove();
+            foundUser.save();
+            res.redirect('/todo');
 
-    })
+        })
+
+        } else {
+            res.redirect('/');
+        }
 
 })
+
+
 
 // EDIT ROUTE (6)
 router.get('/:id/edit', (req, res) => {
-    User.findOne({username: req.session.username}, (error, foundUser) => {
-        res.render('todo/edit.ejs', {
-            todo: foundUser.todo.id(req.params.id)
+    if(req.session.username){
+        User.findOne({username: req.session.username}, (error, foundUser) => {
+            res.render('todo/edit.ejs', {
+                todo: foundUser.todo.id(req.params.id)
+            })
+
         })
 
-    })
+        } else {
+            res.redirect('/');
+        }
 
 })
 
+
+
 // PUT ROUTE (7)
 router.put('/:id/', (req, res) => {
-    User.findOne({username: req.session.username}, (error, foundUser) => {
-        if(req.body.completed === 'on'){
+    if(req.session.username){
+        User.findOne({username: req.session.username}, (error, foundUser) => {
+            if(req.body.completed === 'on'){
 
-        req.body.completed = true;
+            req.body.completed = true;
 
-    } else {
+        } else {
 
-        req.body.completed = false;
+            req.body.completed = false;
 
-    }
-        foundUser.todo.id(req.params.id).category = req.body.category;
-        foundUser.todo.id(req.params.id).action = req.body.action;
-        foundUser.todo.id(req.params.id).description = req.body.description;
-        foundUser.todo.id(req.params.id).completed = req.body.completed;
-        foundUser.save();
-        res.redirect('/todo/')
-    })
+        }
+            foundUser.todo.id(req.params.id).category = req.body.category;
+            foundUser.todo.id(req.params.id).action = req.body.action;
+            foundUser.todo.id(req.params.id).description = req.body.description;
+            foundUser.todo.id(req.params.id).completed = req.body.completed;
+            foundUser.save();
+            res.redirect('/todo/')
+        })
+
+        } else {
+            res.redirect('/');
+        }
 
 })
 

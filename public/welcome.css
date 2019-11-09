@@ -1,5 +1,5 @@
 body {
-    background-color: #26a69a;
+    background-color: #ffb300;
     color: white;
 }
 
@@ -11,7 +11,7 @@ fieldset {
     background-color: #e0f2f1;
     color: black;
     font-weight: 200;
-    border: 10px solid #ffb300;
+    border: 10px solid #26a69a;
 }
 
 h1, h5, h4 {
@@ -20,7 +20,7 @@ h1, h5, h4 {
 
 h1 {
     font-weight: 900;
-    text-shadow: 2px 2px 2px #ffb300;
+    text-shadow: 2px 2px 2px #26a69a;
 }
 
 h4, h5, p {
@@ -28,6 +28,34 @@ h4, h5, p {
 }
 
 a {
-    color: #ffb300;
+    color: #26a69a;
     font-weight: 600;
 }
+
+img {
+    height: 350px;
+    width: 630px;
+    margin-top: 300px
+}
+
+div.col.s5.offset-s7 {
+    margin-left: 120px;
+}
+
+@media (max-width: 1100px){
+    div.col.s5.img {
+        display: none;
+    }
+
+    div.row {
+        display: flex;
+        justify-content: center;
+    }
+
+div.col.s5.offset-s7 {
+        width: 80%;
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    }

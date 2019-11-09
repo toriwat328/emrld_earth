@@ -13,7 +13,7 @@
             <div class="nav-wrapper teal lighten-4">
               <a href="/main" class="brand-logo">EMRLD EARTH</a>
               <ul id="mobile-demo"class="right hide-on-med-and-down">
-                <li><a href="/earth/main">Tips</a></li>
+                <li><a href="/earth">Tips</a></li>
                 <li><a href="/todo">Reminders</a></li>
                 <li><a href="/carbon">Calculator</a></li>
                 <li><a href="/tracker">Tracker</a></li>
@@ -27,7 +27,7 @@
 
           <h3>HOME ENERGY</h3>
           <p>Enter your average monthly bill for each source of energy your household uses (enter as USD without $)</p>
-          <p>Click the icons, below for each U.S. average</p>
+
 
 
           <form action="/carbon" method="POST">
@@ -42,13 +42,23 @@
                       <option name="household" value="5"<% if (footprint[0].household == "5") { %>selected<% } %> >5</option>
                   </select></br/>
 
-                  Natural Gas <input type="text" name="naturalgasbill" value="<%=footprint[0].naturalgasbill%>" placeholder="Enter Avg. Monthly Gas Bill"></br/>
 
-                  Electricity <input type="text" name="electricitybill" value="<%=footprint[0].electricitybill%>"placeholder="Enter Avg. Monthly Electricity Bill"></br/>
+                  Natural Gas
+                  <label>Avg: $23/month in the US per person per household</label>
+                  <input type="text"
+                  name="naturalgasbill" value="<%=footprint[0].naturalgasbill%>" placeholder="Enter Avg. Monthly Gas Bill"></br/>
 
-                  Fuel Oil<input type="text" name="fueloilbill" value="<%=footprint[0].fueloilbill%>" placeholder="Enter Avg. Monthly Fuel Oil Consumption"></br/>
+                  Electricity
+                  <label>Avg: $44/month in the US per person per household</label>
+                  <input type="text" name="electricitybill" value="<%=footprint[0].electricitybill%>"placeholder="Enter Avg. Monthly Electricity Bill"></br/>
 
-                  Propane <input type="text" name="propanebill" value="<%=footprint[0].propanebill%>" placeholder="Enter Avg. Monthly Propane Consumption"></br/>
+                  Fuel Oil
+                  <label>Avg: $72/month in the US per person per household</label>
+                  <input type="text" name="fueloilbill" value="<%=footprint[0].fueloilbill%>" placeholder="Enter Avg. Monthly Fuel Oil Consumption"></br/>
+
+                  Propane
+                  <label>Avg: $37/month in the US per person per household</label>
+                  <input type="text" name="propanebill" value="<%=footprint[0].propanebill%>" placeholder="Enter Avg. Monthly Propane Consumption"></br/>
 
                       <input class="waves-effect waves-light btn amber darken-1" type="submit" value="CALCULATE HOME ENERGY EMISSION">
               </fieldset>
@@ -60,13 +70,13 @@
               <h5>Your Carbon Footprint</h5>
               <p>Annual CO2 emissions (lbs.)</p>
               <%    if(footprint[0] !== [ ]){  %>
-                          Natural Gas Emissions: <h5><% const sum1 = Math.floor((footprint[0].naturalgasbill / 10.68) * 119.58 * 12/footprint[0].household) %><%=sum1%>lbs.</h5></br/>
-                          Electricity Emissions: <h5><% const sum2 = Math.floor((footprint[0].electricitybill/ 0.1188) * 1.238516 * 12/footprint[0].household) %><%=sum2%>lbs.</h5></br/>
-                          Fuel Oil Emissions: <h5><% const sum3 = Math.floor((footprint[0].fueloilbill / 4.02) * 22.61 * 12/footprint[0].household) %><%=sum3%>lbs.</h5></br/>
-                          Propane Emissions: <h5><%  const sum4 = Math.floor((footprint[0].propanebill / 2.47) * 12.43 * 12/footprint[0].household) %><%=sum4%>lbs.</h5></br/>
+                          Natural Gas Emissions: <h5><% const sum1 = Math.floor(((footprint[0].naturalgasbill / 10.68) * 119.58 * 12)* footprint[0].household) %><%=sum1%>lbs.</h5></br/>
+                          Electricity Emissions: <h5><% const sum2 = Math.floor(((footprint[0].electricitybill/ 0.1188) * 1.238516 * 12)* footprint[0].household) %><%=sum2%>lbs.</h5></br/>
+                          Fuel Oil Emissions: <h5><% const sum3 = Math.floor(((footprint[0].fueloilbill / 4.02) * 22.61 * 12)* footprint[0].household) %><%=sum3%>lbs.</h5></br/>
+                          Propane Emissions: <h5><%  const sum4 = Math.floor(((footprint[0].propanebill / 2.47) * 12.43 * 12)* footprint[0].household) %><%=sum4%>lbs.</h5></br/>
 
                           <h5>Your Total Annual Carbon Footprint</h5>
-                          <p>Per person for a household of <%=footprint[0].household%> in the US. The US Average Footprint is 15,617 lbs per person. </p>
+                          <p>For a household of <%=footprint[0].household%> in the US. The US Average Footprint is 15,617 lbs per person. </p>
                           <h4><%=sum1 + sum2 + sum3 + sum4 %> lbs.</h4>
 
                   <%    } else {  %>
@@ -81,24 +91,28 @@
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              <h5 class="white-text-logo">EMRLD EARTH</h5>
+              <p class="grey-text text-lighten-4">Keep track of your loving contributions to earth.</p>
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
+              <h5 class="white-text">Contact Developer</h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li>Tori-Ann Watkis</li>
+                  <li>toriwat328@gmail.com</li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/tori-ann-watkis/">LinkedIn</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/toriwat328/emrld_earth">GitHub</a></li>
+              </ul>
+              <h5 class="white-text">Sources</h5>
+              <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.curbed.com/2017/6/7/15749900/how-to-stop-climate-change-actions">Curbed Article</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www3.epa.gov/carbon-footprint-calculator/">Carbon Footprint Calculations</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="footer-copyright">
           <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          © 2019 Copyright EMRLD EARTH
           </div>
         </div>
       </footer>

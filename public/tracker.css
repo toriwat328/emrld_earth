@@ -80,10 +80,38 @@ h1 {
     text-shadow: 2px 2px 2px #26a69a;
 }
 
-h5, p {
+h5 {
+    text-align: center;
+}
+
+p {
     text-align: center;
 }
 
 .container {
     margin-bottom: 50px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.white-text-logo {
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #ffb300;
+}
+
+footer .row {
+    text-align: left;
+}
+
+footer h5, p {
+    text-align: left;
 }
