@@ -20,6 +20,7 @@ h1, h5, h4 {
 
 h1 {
     font-weight: 900;
+    text-shadow: 2px 2px 2px #ffb300;
 }
 
 h4, h5, p {

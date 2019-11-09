@@ -13,6 +13,7 @@ fieldset {
 h1 {
     font-weight: 900;
     text-align: center;
+    text-shadow: 2px 2px 2px #ffb300
 }
 
 p {
@@ -20,7 +21,13 @@ p {
 }
 
 
+
 a {
     color: white;
     font-weight: 200;
+}
+
+a:hover {
+    color: black;
+
 }
