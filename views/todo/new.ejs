@@ -21,34 +21,38 @@
           </nav>
         </header>
 
-        <div class="container">
-            <h1>CREATE NEW TODO</h1>
-            <a class="link" href="/todo/">Back to Reminders</a>
-            <form action="/todo" method="POST">
-                <fieldset>
-                    <label>Choose A Category</label>
-                    <select class="browser-default"id="category" name="category">
-                        <option value="" disabled selected>--Please choose a category--</option>
-                        <option name="category" value="In Your Home">In Your Home</option>
-                        <option name="category" value="On Your Table">On Your Table</option>
-                        <option name="category" value="Along Your Commute">Along Your Commute</option>
-                        <option name="category" value="In Your Neighborhood">In Your Neighborhood</option>
-                    </select></br/>
+        <main>
+            <div class="container">
+                <h1>CREATE NEW TODO</h1>
+                <a class="link" href="/todo/">Back to Reminders</a>
+                <form action="/todo" method="POST">
+                    <fieldset>
+                        <label>Choose A Category</label>
+                        <select class="browser-default"id="category" name="category">
+                            <option value="" disabled selected>--Please choose a category--</option>
+                            <option name="category" value="In Your Home">In Your Home</option>
+                            <option name="category" value="On Your Table">On Your Table</option>
+                            <option name="category" value="Along Your Commute">Along Your Commute</option>
+                            <option name="category" value="In Your Neighborhood">In Your Neighborhood</option>
+                        </select></br/>
 
 
-                <label>Action:</label>
-                <input type="text" name="action"/><br/>
-                <label>Description:</label>  <input type="text" name="description"/><br/>
+                    <label>Action:</label>
+                    <input type="text" name="action"/><br/>
+                    <label>Description:</label>  <input type="text" name="description"/><br/>
 
-                    <label for="completed-check">
-                        <input type="checkbox" id="completed-check" name="completed" />
-                        <span>Completed</span>
-                    </label><br/>
+                        <label for="completed-check">
+                            <input type="checkbox" id="completed-check" name="completed" />
+                            <span>Completed</span>
+                        </label><br/>
 
-                <input class="waves-effect waves-light btn amber darken-1" type="submit" value="CREATE TODO">
-                </fieldset>
-            </form>
-        </div>
-        
+                    <input class="waves-effect waves-light btn amber darken-1" type="submit" value="CREATE TODO">
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+
+        <% include ../partials/footer.ejs %>
+
     </body>
 </html>

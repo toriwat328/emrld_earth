@@ -22,50 +22,78 @@
           </nav>
         </header>
 
-        <div class="container">
-            <h1>REMINDERS</h1>
-            <div class="internal-nav">
-                <a href="/todo/new" class="waves-effect waves-light btn amber darken-1">Create New Item</a>
-                <a href="/earth" class="waves-effect waves-light btn amber darken-1">Add to Reminders From Emrld Tips</a>
-            </div>
+        <main>
+            <div class="container">
+                <h1>REMINDERS</h1>
+                <div class="internal-nav">
+                    <a href="/todo/new" class="waves-effect waves-light btn amber darken-1">Create New Item</a>
+                    <a href="/earth" class="waves-effect waves-light btn amber darken-1">Add to Reminders From Emrld Tips</a>
+                </div>
 
 
-            <h3>In Your Home</h3>
-        <%    for(let i = 0; i < allTodo.length; i++){ %>
-            <%    if(allTodo[i].category === "In Your Home"){  %>
-                    <div class="todo-item">
+                <h3>In Your Home</h3>
+            <%    for(let i = 0; i < allTodo.length; i++){ %>
+                <%    if(allTodo[i].category === "In Your Home"){  %>
+                        <div class="todo-item">
+                            <h6><a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a></h6>
+                            <form action="/tracker" method="POST">
+                                <label for="check-home">
+                                    <input type="checkbox" id="check-home" name='completed'
+                                     <%    if(allTodo[i].completed === true) {   %>
+
+                                                checked
+
+                                            <%    }   %>
+
+                                            />
+
+                                    <span>Completed</span>
+                                </label><br/>
+
+                            </form>
+                        </div>
+
+                        <%    } else {  %>
+
+                    <%    }  %>
+
+                <%    }  %>
+
+                <h3>On Your Table</h3>
+            <%    for(let i = 0; i < allTodo.length; i++){ %>
+                <%    if(allTodo[i].category === "On Your Table"){  %>
+                        <div class="todo-item">
                         <h6><a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a></h6>
-                        <form action="/tracker" method="POST">
-                            <label for="check-home">
-                                <input type="checkbox" id="check-home" name='completed'
-                                 <%    if(allTodo[i].completed === true) {   %>
+                            <form action="#" method="POST">
+                                <label for="check-table">
+                                    <input type="checkbox" id="check-table" name='completed'
+                                    <%    if(allTodo[i].completed === true) {   %>
 
-                                            checked
+                                               checked
 
-                                        <%    }   %>
+                                           <%    }   %>
 
-                                        />
+                                           />
 
-                                <span>Completed</span>
-                            </label><br/>
+                                    <span>Completed</span>
+                                </label><br/>
+                            </form>
+                        </div>
 
-                        </form>
-                    </div>
+                        <%    } else {  %>
 
-            <%    } else {  %>
+                    <%    }  %>
 
-            <%    }  %>
+                <%    }  %>
 
-        <%    }  %>
-
-            <h3>On Your Table</h3>
+            <h3>Along Your Commute</h3>
         <%    for(let i = 0; i < allTodo.length; i++){ %>
-            <%    if(allTodo[i].category === "On Your Table"){  %>
+            <%    if(allTodo[i].category === "Along Your Commute"){  %>
                     <div class="todo-item">
                     <h6><a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a></h6>
                         <form action="#" method="POST">
-                            <label for="check-table">
-                                <input type="checkbox" id="check-table" name='completed'
+                            <label for="check-commute">
+                                <input type="checkbox" id="check-commute" name='completed'
                                 <%    if(allTodo[i].completed === true) {   %>
 
                                            checked
@@ -76,23 +104,26 @@
 
                                 <span>Completed</span>
                             </label><br/>
+
                         </form>
                     </div>
 
-            <%    } else {  %>
+                    <%    } else {  %>
+
+                <%    }  %>
 
             <%    }  %>
 
-        <%    }  %>
 
-        <h3>Along Your Commute</h3>
-    <%    for(let i = 0; i < allTodo.length; i++){ %>
-        <%    if(allTodo[i].category === "Along Your Commute"){  %>
+
+        <h3>In Your Neighborhood</h3>
+        <%    for(let i = 0; i < allTodo.length; i++){ %>
+        <%    if(allTodo[i].category === "In Your Neighborhood"){  %>
                 <div class="todo-item">
                 <h6><a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a></h6>
                     <form action="#" method="POST">
-                        <label for="check-commute">
-                            <input type="checkbox" id="check-commute" name='completed'
+                        <label for="check-neigh">
+                            <input type="checkbox"  id="check-neigh" name='completed'
                             <%    if(allTodo[i].completed === true) {   %>
 
                                        checked
@@ -102,46 +133,18 @@
                                    />
 
                             <span>Completed</span>
-                        </label><br/>
-
+                        </label> <br/>
                     </form>
                 </div>
 
-        <%    } else {  %>
+                <%    } else {  %>
 
-        <%    }  %>
+                    <%    }  %>
 
-    <%    }  %>
-
-
-
-    <h3>In Your Neighborhood</h3>
-    <%    for(let i = 0; i < allTodo.length; i++){ %>
-    <%    if(allTodo[i].category === "In Your Neighborhood"){  %>
-            <div class="todo-item">
-            <h6><a href="/todo/<%=allTodo[i].id%>">Action: <%=allTodo[i].action%><br/></a></h6>
-                <form action="#" method="POST">
-                    <label for="check-neigh">
-                        <input type="checkbox"  id="check-neigh" name='completed'
-                        <%    if(allTodo[i].completed === true) {   %>
-
-                                   checked
-
-                               <%    }   %>
-
-                               />
-
-                        <span>Completed</span>
-                    </label> <br/>
-                </form>
+                    <%    }  %>
             </div>
+        </main>
 
-    <%    } else {  %>
-
-    <%    }  %>
-
-    <%    }  %>
-        </div>
         <footer class="page-footer grey darken-1">
           <div class="container">
             <div class="row">
@@ -171,17 +174,5 @@
             </div>
           </div>
         </footer>
-<script>
-$(document).ready(function() {
-
-});
-
-//checking to see what the value is when i click on completed checkbox
-function value_() {
-  var checkbox = document.getElementById('mycheckbox');
-  alert('checkbox value: ' + checkbox.checked)
-
-}
-</script>
     </body>
 </html>

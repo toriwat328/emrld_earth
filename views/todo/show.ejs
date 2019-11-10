@@ -20,23 +20,26 @@
             </div>
           </nav>
         </header>
-        <div class="container">
-            <h1>REMINDER DETAILS</h1>
-            <a class="link" href="/todo/">Back to Reminders</a>
+        <main>
+            <div class="container">
+                <h1>REMINDER DETAILS</h1>
+                <a class="link" href="/todo/">Back to Reminders</a>
 
-            <h5>Category:</h5> <p><%=todo.category%></p><br/>
-            <h5>Action:</h5> <p><%=todo.action%></p><br/>
-            <h5>Description:</h5> <p><%=todo.description%></p><br/>
+                <h5>Category:</h5> <p><%=todo.category%></p><br/>
+                <h5>Action:</h5> <p><%=todo.action%></p><br/>
+                <h5>Description:</h5> <p><%=todo.description%></p><br/>
 
-          <div class="show-buttons">
-              <form action="/todo/<%=todo.id%>?_method=DELETE" method="POST">
-                  <input class="waves-effect waves-light btn red lighten-1" type="submit" value="DELETE">
-              </form>
+                  <div class="show-buttons">
+                      <form action="/todo/<%=todo.id%>?_method=DELETE" method="POST">
+                          <input class="waves-effect waves-light btn red lighten-1" type="submit" value="DELETE">
+                      </form>
 
-              <a href="/todo/<%=todo.id%>/edit" class="waves-effect waves-light btn amber darken-1">Edit</a>
-          </div>
+                      <a href="/todo/<%=todo.id%>/edit" class="waves-effect waves-light btn amber darken-1">Edit</a>
+                  </div>
+            </div>
+        </main>
 
-      </div>
+      <% include ../partials/footer.ejs %>
 
     </body>
 </html>

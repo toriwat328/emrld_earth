@@ -21,9 +21,9 @@ fieldset {
 }
 
 .carbon-footprint {
-    background-color: #26a69a;
+    background-color: #e0f2f1;
     padding: 20px;
-    border: 10px solid #e0f2f1;
+    border: 10px solid #ffb300;
 }
 
 h4 {
@@ -31,8 +31,13 @@ h4 {
     font-weight: 900;
 }
 
+.title {
+    color:  #757575;
+    font-weight: 500;
+}
+
 h5 {
-    color: white;
+    color: #26a69a;
 }
 
 body {

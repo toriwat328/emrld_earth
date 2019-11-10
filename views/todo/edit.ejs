@@ -21,44 +21,47 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h1>EDIT REMINDER</h1>
-        <a class="link" href="/todo/<%=todo.id%>">Back to Item</a>
-        <form action="/todo/<%=todo.id%>?_method=PUT" method="POST">
+    <main>
+        <div class="container">
+            <h1>EDIT REMINDER</h1>
+            <a class="link" href="/todo/<%=todo.id%>">Back to Item</a>
+            <form action="/todo/<%=todo.id%>?_method=PUT" method="POST">
 
-            <fieldset>
-                <label>Choose A Category</label>
-                <select class="browser-default"id="category" name="category" value="<%=todo.category%>">
-                    <option value="<%=todo.category%>" disabled selected>--Please choose a category--</option>
-                    <option name="category" value="In Your Home" <% if (todo.category == "In Your Home") { %>selected<% } %> >In Your Home</option>
-                    <option name="category" value="On Your Table" <% if (todo.category == "On Your Table") { %>selected<% } %>>On Your Table</option>
-                    <option name="category" value="Along Your Commute" <% if (todo.category == "Along Your Commute") { %>selected<% } %>>Along Your Commute</option>
-                    <option name="category" value="In Your Neighborhood" <% if (todo.category == "In Your Neighborhood") { %>selected<% } %>>In Your Neighborhood</option>
-                </select></br/>
+                <fieldset>
+                    <label>Choose A Category</label>
+                    <select class="browser-default"id="category" name="category" value="<%=todo.category%>">
+                        <option value="<%=todo.category%>" disabled selected>--Please choose a category--</option>
+                        <option name="category" value="In Your Home" <% if (todo.category == "In Your Home") { %>selected<% } %> >In Your Home</option>
+                        <option name="category" value="On Your Table" <% if (todo.category == "On Your Table") { %>selected<% } %>>On Your Table</option>
+                        <option name="category" value="Along Your Commute" <% if (todo.category == "Along Your Commute") { %>selected<% } %>>Along Your Commute</option>
+                        <option name="category" value="In Your Neighborhood" <% if (todo.category == "In Your Neighborhood") { %>selected<% } %>>In Your Neighborhood</option>
+                    </select></br/>
 
 
-                <label>Action:</label>
+                    <label>Action:</label>
 
-                <input type="text" name="action" value="<%=todo.action%>"/><br/>
-                <label>Description:</label>
-                <input type="text" name="description" value="<%=todo.description%>"/><br/>
-                <label for="check-edit">
-                    <input type="checkbox" id="check-edit" name="completed"
-                    <%    if(todo.completed === true) {   %>
+                    <input type="text" name="action" value="<%=todo.action%>"/><br/>
+                    <label>Description:</label>
+                    <input type="text" name="description" value="<%=todo.description%>"/><br/>
+                    <label for="check-edit">
+                        <input type="checkbox" id="check-edit" name="completed"
+                        <%    if(todo.completed === true) {   %>
 
-                        checked
+                            checked
 
-                        <%    }   %>
+                            <%    }   %>
 
-                        />
-                        <span>Completed</span>
-                    </label><br/>
+                            />
+                            <span>Completed</span>
+                        </label><br/>
 
-                    <input class="waves-effect waves-light btn amber darken-1" id="edit" type="submit" value="EDIT TODO">
+                        <input class="waves-effect waves-light btn amber darken-1" id="edit" type="submit" value="EDIT TODO">
                 </fieldset>
-
             </form>
         </div>
+    </main>
+
+        <% include ../partials/footer.ejs %>
 
     </body>
     </html>
