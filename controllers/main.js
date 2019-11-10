@@ -1,8 +1,16 @@
+//-----------------------------------
+//DEPENDENCIES
+//-----------------------------------
+
 const express = require('express');
 const router = express.Router();
 const User = require('../models/users.js');
 
-//Get route to go to main after user signs up or logs in
+//-----------------------------------
+//ROUTES (GET)
+//-----------------------------------
+
+//GET /MAIN IF USER IS LOGGED IN, FIND COLLECTION OF USER THAT LOGGED IN, RENDER MAIN PAGE AND CREATE PROPERTIES USERNAME AND FIRSTNAME TO BE USE WITHIN INDEX.EJS (TO SHOW USERS NAME ON DASHBOARD) --> IF NOT REDIRECT TO WELCOME PAGE
 router.get('/', (req, res) => {
     if(req.session.username){
         User.findOne({username: req.session.username}, (error, foundUser) => {
@@ -11,27 +19,13 @@ router.get('/', (req, res) => {
                 firstname: foundUser.firstname
             });
         })
-
-
-        } else {
-            res.redirect('/');
-        }
+    } else {
+        res.redirect('/');
+    }
 })
 
-router.post('/', (req, res) => {
-    if(req.session.username){
-        User.create(req.body, (error, createdUser) => {
-            res.redirect('/main');
-        })
-
-
-        } else {
-            res.redirect('/');
-        }
-})
-
-
-
-
+//-----------------------------------
+//ROUTER EXPORT
+//-----------------------------------
 
 module.exports = router;

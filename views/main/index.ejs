@@ -1,113 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>EMRLD EARTH</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="/main.css">
-    </head>
-    <body>
-        <main class="page-main">
-            <div class="container">
+<head>
+    <meta charset="utf-8">
+    <title>EMRLD EARTH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <main class="page-main">
+        <div class="container">
 
 
-        <%  if(firstname) {  %>
+            <%  if(firstname) {  %>
                 <h1>Hello, <%=firstname%>!</h1>
-        <%    }  %>
+                <%    }  %>
 
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card teal lighten-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">EMRLD EARTH</span>
-                        <p>50 ways that you can fight climate change, today!</p>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card teal lighten-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">EMRLD EARTH</span>
+                                <p>50 ways that you can fight climate change, today!</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="/earth">EMRLD EARTH</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-action">
-                        <a href="/earth">EMRLD EARTH</a>
+
+                    <div class="col s12 m6">
+                        <div class="card teal lighten-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">REMINDER LIST</span>
+                                <p>List of your daily goals towards making earth better.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="/todo">REMINDER LIST</a><br/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="card teal lighten-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">TRACKER</span>
+                                <p>Track your progress as you accomplish your goals.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="/tracker">TRACKER</a><br/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="card teal lighten-1">
+                            <div class="card-content white-text">
+                                <span class="card-title">CARBON FOOTPRINT CALCULATOR</span>
+                                <p>Calculate your annual carbon emissions.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="/carbon">CARBON FOOTPRINT CALCULATOR</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <input class="waves-effect waves-light btn amber darken-1" type="submit" value="Log Out">
+                </form>
+
+
+                
+            </div>
+        </main>
+
+
+        <footer class="page-footer grey darken-1">
+            <div class="container-footer">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text-logo">EMRLD EARTH</h5>
+                        <p class="grey-text text-lighten-4">Keep track of your loving contributions to earth.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Contact Developer</h5>
+                        <ul>
+                            <li>Tori-Ann Watkis</li>
+                            <li>toriwat328@gmail.com</li>
+                            <li><a class="grey-text text-lighten-3 link" href="https://www.linkedin.com/in/tori-ann-watkis/">LinkedIn</a></li>
+                            <li><a class="grey-text text-lighten-3 link" href="https://github.com/toriwat328/emrld_earth">GitHub</a></li>
+                        </ul>
+                        <h5 class="white-text">Sources</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3 link" href="https://www.curbed.com/2017/6/7/15749900/how-to-stop-climate-change-actions">Curbed Article</a></li>
+                            <li><a class="grey-text text-lighten-3 link" href="https://www3.epa.gov/carbon-footprint-calculator/">Carbon Footprint Calculations</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="copyright">
+                        © 2019 Copyright EMRLD EARTH
+                    </div>
 
-            <div class="col s12 m6">
-                <div class="card teal lighten-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">REMINDER LIST</span>
-                        <p>List of your daily goals towards making earth better.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="/todo">REMINDER LIST</a><br/>
-                    </div>
                 </div>
             </div>
-
-            <div class="col s12 m6">
-                <div class="card teal lighten-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">TRACKER</span>
-                        <p>Track your progress as you accomplish your goals.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="/tracker">TRACKER</a><br/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6">
-                <div class="card teal lighten-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">CARBON FOOTPRINT CALCULATOR</span>
-                        <p>Calculate your annual carbon emissions.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="/carbon">CARBON FOOTPRINT CALCULATOR</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-            <form action="/sessions?_method=DELETE" method="POST">
-                <input class="waves-effect waves-light btn amber darken-1" type="submit" value="Log Out">
-            </form>
-
-
-
-    </div>
-</main>
-
-
-<footer class="page-footer grey darken-1">
-  <div class="container-footer">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text-logo">EMRLD EARTH</h5>
-        <p class="grey-text text-lighten-4">Keep track of your loving contributions to earth.</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Contact Developer</h5>
-        <ul>
-            <li>Tori-Ann Watkis</li>
-            <li>toriwat328@gmail.com</li>
-            <li><a class="grey-text text-lighten-3 link" href="https://www.linkedin.com/in/tori-ann-watkis/">LinkedIn</a></li>
-            <li><a class="grey-text text-lighten-3 link" href="https://github.com/toriwat328/emrld_earth">GitHub</a></li>
-        </ul>
-        <h5 class="white-text">Sources</h5>
-        <ul>
-            <li><a class="grey-text text-lighten-3 link" href="https://www.curbed.com/2017/6/7/15749900/how-to-stop-climate-change-actions">Curbed Article</a></li>
-            <li><a class="grey-text text-lighten-3 link" href="https://www3.epa.gov/carbon-footprint-calculator/">Carbon Footprint Calculations</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-        <div class="copyright">
-            © 2019 Copyright EMRLD EARTH
-        </div>
-
-    </div>
-  </div>
-</footer>
+        </footer>
     </body>
-</html>
+    </html>

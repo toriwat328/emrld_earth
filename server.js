@@ -1,6 +1,7 @@
 //-----------------------------------
 //DEPENDENCIES
 //-----------------------------------
+
 const express = require('express')
 const User = require('./models/users.js')
 const bcrypt = require('bcrypt')
@@ -10,14 +11,17 @@ const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
+
 //-----------------------------------
 //PORT
 //-----------------------------------
+
 const PORT = process.env.PORT
 
 //-----------------------------------
 //DATABASE
 //-----------------------------------
+
 const MONGODB_URI = process.env.MONGODB_URI
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
@@ -26,9 +30,11 @@ mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
 //-----------------------------------
 //MIDDLEWARE
 //-----------------------------------
+
 //use public folder for static assets
 app.use(express.static('public'))
 
@@ -66,14 +72,17 @@ app.use('/tracker', trackerController)
 
 const carbonController = require('./controllers/carbon.js')
 app.use('/carbon', carbonController)
+
 //-----------------------------------
 //ROUTES
 //-----------------------------------
 
+//GET / --> RENDER WELCOME.EJS
 app.get('/', (req, res) => {
     res.render('welcome.ejs')
 })
 
+//POST TO /, SET PASSWORD THAT WAS ENTERED EQUAL TO AN ENCRYPTED PASSWORD. CREATE A NEW USER IN THE USER COLLECTION. SET SESSION'S USERNAME EQUAL TO CREATED USER'S USERNAME. PUSH INITIAL FOOTPRINT INTO CREATED USER'S COLLECTION IN ORDER FOR CARBON EMISSIONS CALCULATOR TO WORK.
 app.post('/', (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (error, createdUser) => {
@@ -113,6 +122,7 @@ app.get('/destroy', () => {
 //-----------------------------------
 //LISTENER
 //-----------------------------------
+
 app.listen(PORT, () => {
     console.log('Listening on port:', PORT);
 });
