@@ -1,6 +1,6 @@
 # EMRLD EARTH APP
 
-## Link To Live Site: https://emrld-earth.herokuapp.com/
+## https://emrld-earth.herokuapp.com/
 
 ### Languages/Technologies/Methodologies Used In Creating This App:
 HTML, CSS,  Materialize, JavaScript, JQuery, Heroku, MongoDB Atlas, Mongoose, Express, NodeJS, EJS, CRUD, 7 RESTFUL routes, MVC, BCRYPT for Encryption, Authorization
